@@ -1,0 +1,20 @@
+{
+  "name": "cuentabanco",
+  "version": "1.0.0",
+  "description": "Gestion de cuenta corriente banco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bettelgeuxe/banco.git"
+  },
+  "author": "Cathe",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/bettelgeuxe/banco/issues"
+  },
+  "homepage": "https://github.com/bettelgeuxe/banco#readme"
+}

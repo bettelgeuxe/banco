@@ -1,46 +1,48 @@
-class Cliente {
-    nombreCliente;
-    dniCliente;
-    rutCliente;
-}
+/*Definición de clases*/
 
-class CuentaCorriente{
-    numero;
-    saldo;
-    agencia;
 
-    depositoEnCuenta(valor){
-        this.saldo += valor;
-    }
-}
+//importación clases
+import {Cliente} from './Cliente.js';
+import {CuentaCorriente} from './CuentaCorriente.js';
 
-const cliente1 = new Cliente();
-cliente1.nombreCliente = "Jose";
-cliente1.dniCliente="123";
-cliente1.rutCliente="123";
+const cliente = new Cliente();
+cliente.nombreCliente ='Catherine';
+cliente.dniCliente = '222222';
+cliente.rutCliente = '222222';
 
-const cuentaCorriente1 = new CuentaCorriente();
-cuentaCorriente1.numero="1234567";
-cuentaCorriente1.saldo=2000; 
-cuentaCorriente1.agencia=1001;
+const cuentaCatherine = new CuentaCorriente();
+cuentaCatherine.numero='1';
+cuentaCatherine.agencia='001';
+cuentaCatherine.cliente = cliente;
 
 const cliente2 = new Cliente();
-cliente2.nombreCliente = "Pepito";
-cliente2.dniCliente="123456";
-cliente2.rutCliente="123456"
+cliente2.nombreCliente ='Alejandra';
+cliente2.dniCliente = '11111';
+cliente2.rutCliente = '11111';
 
-const cuentaCorriente2 = new CuentaCorriente();
-cuentaCorriente2.numero="123";
-cuentaCorriente2.saldo=7000;
-cuentaCorriente2.agencia=1002;
+const cuentaMaleja = new CuentaCorriente();
+cuentaMaleja.numero='2';
+cuentaMaleja.agencia='002';
+cuentaMaleja.cliente = cliente;
 
 
-console.log(cliente1);
-console.log(cuentaCorriente1)
 
-console.log(cliente2);
-console.log(cuentaCorriente2);
+//cuentaCatherine.saldo=0;
 
-console.log(cuentaCorriente2.saldo);
-cuentaCorriente2.depositoEnCuenta(100);
-console.log(cuentaCorriente2.saldo);
+
+let saldo = cuentaCatherine.verSaldo();
+
+
+saldo=cuentaCatherine.depositoEnCuenta(1000);
+console.log('El saldo actual (cuentaCatherine) es: '+ saldo);
+
+saldo=cuentaCatherine.retirarDeCuenta(100);
+console.log('El saldo actual es: '+ saldo);
+
+cuentaCatherine.transferirParaCuenta(100,cuentaMaleja);
+
+const saldoMaria = cuentaMaleja.verSaldo();
+console.log('El saldo actual (cuenta de Maleja)' + saldoMaria);
+
+const saldoCatherine =  cuentaCatherine.verSaldo();
+console.log('El saldo actual (cuenta de Cathe)' + saldoCatherine);
