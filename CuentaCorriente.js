@@ -10,5 +10,15 @@ export class CuentaCorriente extends Cuenta{
         CuentaCorriente.cantidadCuentas++;
     }
 
+    retirarDeCuenta(valor){
+        //valor = valor * 1+comision/100;
+        /*
+        if(valor<=this.#saldo)
+            this.#saldo -= valor;
+        return this.#saldo;*/
+
+        super._retirarDeCuenta(valor,5);
+    }
+
     
 }
