@@ -3,16 +3,26 @@
 
 //importación clases
 import {Cliente} from './Cliente.js';
-import {CuentaCorriente} from './CuentaCorriente.js';
-import { CuentaAhorro } from './CuentaAhorro.js';
-import { Cuenta } from './Cuenta.js';
-import { CuentaNomina } from './CuentaNomina.js';
+import {CuentaCorriente} from './Cuentas/CuentaCorriente.js';
+import { CuentaAhorro } from './Cuentas/CuentaAhorro.js';
+import { CuentaNomina } from './Cuentas/CuentaNomina.js';
+import { Empleado } from './Empleados/Empleado.js';
+import { Gerente } from './Empleados/Gerente.js';
+import { Director } from './Empleados/Director.js';
 
 
 const cliente = new Cliente('Catherine', '222222', '222222');
 const cliente2 = new Cliente('Alejandra', '111111', '111111');
 
-const cuentaCatherine = new CuentaCorriente(cliente,'1','001');
+const empleado = new Empleado('Pepito','123456',4000);
+const gerente = new Gerente('Paola','333333',12000);
+const director = new Director('Jair','909090',10000);
+
+console.log(empleado.verBonificacion());
+console.log(gerente.verBonificacion());
+console.log(director.verBonificacion());
+
+/*const cuentaCatherine = new CuentaCorriente(cliente,'1','001');
 const cuentaMaleja = new CuentaCorriente(cliente2,'2','002');
 
 
@@ -24,6 +34,7 @@ cuentaNominaCathe.depositoEnCuenta(1500);
 console.log(cuentaNominaCathe.verSaldo());
 cuentaNominaCathe.retirarDeCuenta(400);
 console.log(cuentaNominaCathe.verSaldo());
+*/
 /*
 console.log(cuentaMaleja);
 
