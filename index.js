@@ -3,25 +3,28 @@
 
 //importación clases
 import {Cliente} from './Cliente.js';
-import {CuentaCorriente} from './Cuentas/CuentaCorriente.js';
-import { CuentaAhorro } from './Cuentas/CuentaAhorro.js';
-import { CuentaNomina } from './Cuentas/CuentaNomina.js';
 import { Empleado } from './Empleados/Empleado.js';
 import { Gerente } from './Empleados/Gerente.js';
 import { Director } from './Empleados/Director.js';
+import { SistemaAutenticacion } from './SistemaAutenticacion.js';
 
 
-const cliente = new Cliente('Catherine', '222222', '222222');
+
 const cliente2 = new Cliente('Alejandra', '111111', '111111');
 
 const empleado = new Empleado('Pepito','123456',4000);
+empleado.asignarClave('12345');
 const gerente = new Gerente('Paola','333333',12000);
-const director = new Director('Jair','909090',10000);
-
+//const director = new Director('Jair','909090',10000);
+const cliente = new Cliente('Catherine', '222222', '222222');
+cliente.asignarClave('1111');
+/*
 console.log(empleado.verBonificacion());
 console.log(gerente.verBonificacion());
 console.log(director.verBonificacion());
-
+*/
+console.log(SistemaAutenticacion.login(empleado,'12345'));
+console.log(SistemaAutenticacion.login(cliente,'1111'));
 /*const cuentaCatherine = new CuentaCorriente(cliente,'1','001');
 const cuentaMaleja = new CuentaCorriente(cliente2,'2','002');
 
